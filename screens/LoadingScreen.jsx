@@ -5,7 +5,7 @@ import LottieView from 'lottie-react-native';
 const LoadingScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Semester'); // Navigate to SemesterScreen after 3 seconds
+      navigation.replace('ClassifyX'); // Navigate to SemesterScreen after 3 seconds
     }, 3000);
 
     return () => clearTimeout(timer); // Clear the timer on unmount

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet ,Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SemesterScreen from './screens/SemesterScreen';
@@ -18,81 +18,116 @@ export default function App() {
 
         {/* Semester Screen */}
         <Stack.Screen
-          name="Semester"
-          component={SemesterScreen}
-          options={
-            { title: 'Semesters',  
-              headerStyle:{
-                backgroundColor: '#A9B5DF', // Background color of the header
-              },
-              headerTitleStyle: {
-                fontWeight: 'bold', // Bold font for the title
-                fontSize: 20, // Font size for the title
-                color: '#fff', // Title text color
-              },
-              headerTintColor: 'fff', // Back button and icon color
-            }}
-        />
-
-
+  name="ClassifyX"
+  component={SemesterScreen}
+  options={{
+    headerTitle: () => (
+      <Text style={{ 
+        fontWeight: 'bold', 
+        fontSize: 24, 
+        color: '#fff', 
+        fontStyle: "normal", 
+        // textShadowColor: '#000', 
+        // textShadowOffset: { width: 1, height: 1 }, 
+        // textShadowRadius: 2, 
+        textAlign: 'center', // Center the title
+        
+      }}>
+        Classify
+        <Text style={{ color: '#B771E5', fontStyle:"normal" }}>X</Text> {/* Different color for "X" */}
+      </Text>
+    ),
+    headerStyle: {
+      backgroundColor: '#A9B5DF', // Background color of the header
+    },
+    headerTintColor: '#fff', // Back button and icon color
+  }}
+/>
           {/* Subject Screen */}
           <Stack.Screen
-          name="Subjects"
-          component={SubjectScreen}
-          options={{ title: 'Subjects' ,
-            headerStyle:{
-              backgroundColor: '#A9B5DF', // Background color of the header
-            },
-            headerTitleStyle: {
-              fontWeight: 'bold', // Bold font for the title
-              fontSize: 20, // Font size for the title
-              color: '#fff', // Title text color
-             
-            },
-            headerTintColor: 'fffff', // Back button and icon color
-          }}
-        />
+  name="Subjects"
+  component={SubjectScreen}
+  options={{
+    headerTitle: () => (
+      <Text style={{ 
+        fontWeight: 'bold', 
+        fontSize: 24, 
+        color: '#fff', 
+        fontStyle: "normal", 
+        // textShadowColor: '#000', 
+        // textShadowOffset: { width: 1, height: 1 }, 
+        // textShadowRadius: 2, 
+        textAlign: 'center', // Center the title
+        
+      }}>
+        Classify
+        <Text style={{ color: '#B771E5', fontStyle:"normal" }}>X</Text> {/* Different color for "X" */}
+      </Text>
+    ),
+    headerStyle: {
+      backgroundColor: '#A9B5DF', // Background color of the header
+    },
+    headerTintColor: '#fff', // Back button and icon color
+  }}
+/>
 
 
 
         {/* Material Screen */}
         <Stack.Screen
-          name="Materials"
-          component={MaterialScreen}
-          options={{ title: 'Materials' ,
-
-
-
-            
-           headerStyle:{
-              backgroundColor: '#A9B5DF', // Background color of the header
-            },
-            headerTitleStyle: {
-              fontWeight: 'bold', // Bold font for the title
-              fontSize: 20, // Font size for the title
-              color: '#fff', // Title text color
-             
-            },
-            headerTintColor: 'fffff', // Back button and icon color
-          }}
-        />
+  name="Materials"
+  component={MaterialScreen}
+  options={{
+    headerTitle: () => (
+      <Text style={{ 
+        fontWeight: 'bold', 
+        fontSize: 24, 
+        color: '#fff', 
+        fontStyle: "normal", 
+        // textShadowColor: '#000', 
+        // textShadowOffset: { width: 1, height: 1 }, 
+        // textShadowRadius: 2, 
+        textAlign: 'center', // Center the title
+        
+      }}>
+        Classify
+        <Text style={{ color: '#B771E5', fontStyle:"normal" }}>X</Text> {/* Different color for "X" */}
+      </Text>
+    ),
+    headerStyle: {
+      backgroundColor: '#A9B5DF', // Background color of the header
+    },
+    headerTintColor: '#fff', // Back button and icon color
+  }}
+/>
+      
         {/* Viewer Screen */}
         <Stack.Screen
-          name="Viewer"
-          component={ViewerScreen}
-          options={{ title: 'Viewer',
-            headerStyle:{
-              backgroundColor: '#A9B5DF', // Background color of the header
-            },
-            headerTitleStyle: {
-              fontWeight: 'bold', // Bold font for the title
-              fontSize: 20, // Font size for the title
-              color: '#fff', // Title text color
-             
-            },
-            headerTintColor: 'fffff', // Back button and icon color
-          }}
-        />
+  name="Viewer"
+  component={ViewerScreen}
+  options={{
+    headerTitle: () => (
+      <Text style={{ 
+        fontWeight: 'bold', 
+        fontSize: 24, 
+        color: '#fff', 
+        fontStyle: "normal", 
+        // textShadowColor: '#000', 
+        // textShadowOffset: { width: 1, height: 1 }, 
+        // textShadowRadius: 2, 
+        textAlign: 'center', // Center the title
+        
+      }}>
+        Classify
+        <Text style={{ color: '#B771E5', fontStyle:"normal" }}>X</Text> {/* Different color for "X" */}
+      </Text>
+    ),
+    headerStyle: {
+      backgroundColor: '#A9B5DF', // Background color of the header
+    },
+    headerTintColor: '#fff', // Back button and icon color
+  }}
+/>
       </Stack.Navigator>
     </NavigationContainer>
   );

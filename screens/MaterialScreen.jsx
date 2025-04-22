@@ -71,22 +71,24 @@ const MaterialScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       {/* Custom Carousel */}
-      <ScrollView
-        ref={scrollViewRef}
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-        style={styles.carouselContainer}
-        scrollEnabled={false}
-      >
-        {carouselItems.map((item) => (
-          <View key={item.id} style={styles.carouselItem}>
-            <Image source={{ uri: item.image }} style={styles.carouselImage} resizeMode="cover" />
-            <Text style={styles.carouselText}>{item.title}</Text>
-          </View>
-        ))}
-      </ScrollView>
-
+      <View style={styles.carouselWrapper}>
+        <ScrollView
+          ref={scrollViewRef}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          style={styles.carouselContainer}
+          scrollEnabled={false}
+        >
+          {carouselItems.map((item) => (
+            <View key={item.id} style={styles.carouselItem}>
+              <Image source={{ uri: item.image }} style={styles.carouselImage} resizeMode="cover" />
+              <Text style={styles.carouselText}>{item.title}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      </View>
+  
       {/* Materials List */}
       <Text style={styles.title}>Course Materials for {subjectId}</Text>
       <FlatList
@@ -101,49 +103,47 @@ const MaterialScreen = ({ navigation, route }) => {
 
 export default MaterialScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#f5f5f5'
-  },
-  carouselContainer: {
-    height: 30, // Adjusted height to fit the image and text
-    marginBottom: 10, // Adjusted gap between carousel and list
-    overflow: 'hidden', // Prevent overflow from the container
-    
-  },
-  carouselItem: {
-    width: screenWidth, // Show one image at a time
-    alignItems: 'center',
-    justifyContent:"center",
-    backgroundColor:"transparent"
 
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 20,
+      backgroundColor: '#f5f5f5',
+    },
+    carouselWrapper: {
+      height: 250, // Fixed height for the carousel
+      marginBottom: 10,
+    },
+    carouselContainer: {
+      flex: 1,
+    },
+    carouselItem: {
+      width: screenWidth, // Show one image at a time
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'transparent',
+    },
+    carouselImage: {
+      width: '85%',
+      height: 200, // Adjusted height for better resolution
+      borderRadius: 10,
+    },
+    carouselText: {
+      marginTop: 10,
+      fontSize: 16,
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+    title: {
+      fontSize: 24,
+      fontWeight: 'bold',
+      marginVertical: 10,
+      textAlign: 'center',
+    },
+    listContainer: {
+      paddingBottom: 10,
+    },
   
-  },
-  carouselImage: {
-    width: '85%',
-    height: 200, // Adjusted height for better resolution
-    borderRadius:10,
-    marginRight:"10%"
-  
-   
-  },
-  carouselText: {
-    marginTop: 10,
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginVertical: 10,
-    textAlign: 'center'
-  },
-  listContainer: {
-    paddingBottom: 10
-  },
   materialCard: {
     backgroundColor: '#ffffff',
     padding: 15,
@@ -166,3 +166,86 @@ const styles = StyleSheet.create({
     color: '#333'
   }
 });
+
+
+
+
+/*
+General Education
+book - General education or reading
+book-outline - Notes or assignments
+school-outline - School or education
+notebook-outline - Journals or notebooks
+calendar-check - Timetable or schedule
+clipboard-text - Assignments or tasks
+account-tie - Faculty or professors
+Science
+beaker - Chemistry or experiments
+test-tube - Lab work
+rocket - Space science or aerospace
+weather-lightning - Physics or electricity
+leaf - Environmental science
+bacteria - Microbiology
+earth - Geology or geography
+Mathematics
+abacus - Mathematics or calculations
+chart-pie - Statistics or data visualization
+square-root - Algebra or calculus
+ruler-square - Geometry or measurements
+math-compass - Engineering or technical drawing
+function-variant - Mathematical functions
+Technology
+desktop-classic - Computer science
+cellphone - Mobile development
+code-braces - Programming or coding
+server - Networking or databases
+chip - Electronics or embedded systems
+keyboard - Typing or software development
+cloud-outline - Cloud computing
+Arts and Humanities
+brush - Painting or design
+guitar-acoustic - Music or performing arts
+drama-masks-outline - Theater or drama
+book-open-page-variant - Literature or language studies
+quill - Writing or creative writing
+camera - Photography or media studies
+Business and Economics
+currency-usd-circle - Finance or economics
+briefcase-outline - Business or management
+chart-areaspline - Marketing or analytics
+account-cash - Accounting or financial studies
+account-group-outline - Human resources
+bank-outline - Banking or investments
+Health and Medicine
+heart - Medicine or healthcare
+medical-bag - Medical studies
+needle - Nursing or clinical studies
+food-apple-outline - Nutrition or dietetics
+bandage - First aid or health sciences
+hospital-box-outline - Hospitals or medical facilities
+Engineering
+cogs - Mechanical engineering
+electric-switch - Electrical engineering
+bridge-outline - Civil engineering
+wrench-outline - Tools or technical studies
+hydraulic-oil-level - Industrial engineering
+robot-outline - Robotics or AI
+Sports and Physical Education
+soccer-field - Sports or physical education
+run-fast - Athletics or running
+weight-lifter - Fitness or gym
+basketball-hoop-outline - Basketball or team sports
+trophy-outline - Competitions or achievements
+whistle - Coaching or refereeing
+Languages
+alphabet-latin - Language studies
+translate-variant - Translation or linguistics
+flag-triangle - International studies or foreign languages
+book-alphabet - Literature or language learning
+dictionary - Vocabulary or linguistics
+
+
+
+
+
+*/

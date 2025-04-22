@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  Image,
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
+import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome"; // Import FontAwesome icons
 import { LinearGradient } from "expo-linear-gradient"; // For gradient backgrounds
-
 
 const SemesterScreen = ({ navigation }) => {
   const semesters = [
@@ -20,17 +13,16 @@ const SemesterScreen = ({ navigation }) => {
     { id: 6, name: "Semester 6", icon: "book" },
     { id: 7, name: "Semester 7", icon: "book" },
     { id: 8, name: "Semester 8", icon: "book" },
-    
   ];
 
   return (
-    
-
     <View style={styles.container}>
       {/* Image Section */}
       <View style={styles.imageSection}>
         <Image
-          source={uri("https://img.freepik.com/free-vector/online-certification-illustration_23-2148575636.jpg?ga=GA1.1.1640587892.1744881734&semt=ais_hybrid&w=740")}
+          source={{
+            uri: "https://img.freepik.com/free-vector/online-certification-illustration_23-2148575636.jpg?ga=GA1.1.1640587892.1744881734&semt=ais_hybrid&w=740",
+          }}
           style={styles.heroImage}
         />
       </View>
@@ -63,7 +55,6 @@ const SemesterScreen = ({ navigation }) => {
         </View>
       </LinearGradient>
     </View>
-  
   );
 };
 
@@ -75,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   imageSection: {
-    flex: 4.5, // 30% of the screen
+    flex: 3, // 30% of the screen
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 10,

@@ -71,6 +71,8 @@ const SubjectScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       {/* Custom Carousel */}
+     {/* Custom Carousel */}
+     <View style={styles.carouselWrapper}>
       <ScrollView
         ref={scrollViewRef}
         horizontal
@@ -86,6 +88,7 @@ const SubjectScreen = ({ navigation, route }) => {
           </View>
         ))}
       </ScrollView>
+    </View>
 
       {/* Subjects List */}
       <Text style={styles.title}>Subjects for Semester {semesterId}</Text>
@@ -105,29 +108,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5'
+    backgroundColor: '#f5f5f5',
+  },
+  carouselWrapper: {
+    height: 250, // Fixed height for the carousel
+    marginBottom: 10,
   },
   carouselContainer: {
-    height: 30, // Adjusted height to fit the image and text
-    marginBottom: 10, // Adjusted gap between carousel and list
-    overflow: 'hidden', // Prevent overflow from the container
-    
+    flex: 1,
   },
   carouselItem: {
     width: screenWidth, // Show one image at a time
     alignItems: 'center',
-    justifyContent:"center",
-    backgroundColor:"transparent"
-
-  
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
   },
   carouselImage: {
     width: '85%',
     height: 200, // Adjusted height for better resolution
-    borderRadius:10,
-    marginRight:"10%"
-  
-   
+    borderRadius: 10,
   },
   carouselText: {
     marginTop: 10,
@@ -139,10 +138,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginVertical: 10,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   listContainer: {
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   subjectCard: {
     backgroundColor: '#ffffff',

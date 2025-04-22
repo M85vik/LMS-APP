@@ -16,11 +16,12 @@ const ViewerScreen = ({ route }) => {
   }
 
   if (material.type === 'pdf' || material.type === 'ppt') {
-    // Render PDFs and PPTs using WebView
+    // Render PDFs and PPTs using Google Docs Viewer
+    const googleDocsUrl = `https://docs.google.com/gview?embedded=true&url=${material.file}`;
     return (
       <View style={styles.webContainer}>
         <Text style={styles.title}>{material.title}</Text>
-        <WebView source={{ uri: material.file }} style={styles.webview} />
+        <WebView source={{ uri: googleDocsUrl }} style={styles.webview} />
       </View>
     );
   }
