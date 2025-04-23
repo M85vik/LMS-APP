@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import LottieView from 'lottie-react-native';
+
 
 const LoadingScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('ClassifyX'); // Navigate to SemesterScreen after 3 seconds
+      navigation.replace('Subjects'); // Navigate to SubjectScreen after 3 seconds
     }, 3000);
 
     return () => clearTimeout(timer); // Clear the timer on unmount
@@ -13,6 +14,9 @@ const LoadingScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      {/* App Title */}
+      <Text style={styles.title}>ClassifyX</Text>
+
       {/* Lottie Animation */}
       <LottieView
         source={require('../assets/animations/loading.json')} // Path to your Lottie file
@@ -27,31 +31,28 @@ const LoadingScreen = ({ navigation }) => {
 
 export default LoadingScreen;
 
+import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'center', // Center vertically
+    alignItems: 'center', // Center horizontally
     backgroundColor: 'white',
   },
+  title: {
+    fontSize: 45,
+    fontWeight: 'bold',
+    color: '#D20062',
+    marginBottom: 20, // Add spacing between the title and animation
+  },
   animation: {
-    width: 450,
-    height: 450,
-    
+    width: 350, // Adjusted width for better scaling
+    height: 350, // Adjusted height for better scaling
   },
   text: {
-    marginTop: 0,
+    marginTop: 20, // Add spacing between the animation and text 
     fontSize: 24,
     fontWeight: 'bold',
     color: '#333',
   },
 });
-
-
-
-
-//expo build:android -t apk
-
-
-
-// expo build:android -t app-bundle

@@ -13,7 +13,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.m85vik.lms",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -30,6 +34,9 @@
         "projectId": "d5738aa5-df4c-471b-86f1-02727c073265"
       }
     },
-    "owner": "m85vik"
+    "owner": "m85vik",
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
